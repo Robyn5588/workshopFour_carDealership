@@ -70,6 +70,7 @@ public class DealershipFileManager {
                         vehicle.getPrice() );
 
                 bufferedWriter.write(vehicleLine);
+
             }
 //
             bufferedWriter.close();
