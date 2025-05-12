@@ -94,10 +94,10 @@ public class UserInterface {
         System.out.println("----Display Vehicle by Make/Model Request----");
 
         System.out.print("Enter Make: ");
-        String make = scannerLine.nextLine();
+        String make = scannerLine.nextLine().trim();
 
         System.out.print("Enter Model: ");
-        String model = scannerLine.nextLine();
+        String model = scannerLine.nextLine().trim();
 
         ArrayList<Vehicle> filteredVehicles = dealership.getVehicleByMakeModel(make, model);
         displayVehicles(filteredVehicles);
@@ -122,7 +122,7 @@ public class UserInterface {
         System.out.println("----Display Vehicle by Color----");
 
         System.out.print("Enter Color: ");
-        String color = scannerLine.nextLine();
+        String color = scannerLine.nextLine().trim();
 
         ArrayList<Vehicle> filteredVehicles = dealership.getVehicleByColor(color);
         displayVehicles(filteredVehicles);
@@ -147,7 +147,7 @@ public class UserInterface {
         System.out.println("----Display Vehicle by Vehicle Type----");
 
         System.out.print("Enter Vehicle Type: ");
-        String vehicleType = scannerLine.nextLine();
+        String vehicleType = scannerLine.nextLine().trim();
 
         ArrayList<Vehicle> filteredVehicles = dealership.getVehicleByType(vehicleType);
         displayVehicles(filteredVehicles);
@@ -172,16 +172,16 @@ public class UserInterface {
         int year = scannerDigit.nextInt();
 
         System.out.print("Enter Make: ");
-        String make = scannerLine.nextLine();
+        String make = scannerLine.nextLine().trim();
 
         System.out.print("Enter model: ");
-        String model = scannerLine.nextLine();
+        String model = scannerLine.nextLine().trim();
 
         System.out.print("Enter Vehicle Type: ");
-        String vehicleType = scannerLine.nextLine();
+        String vehicleType = scannerLine.nextLine().trim();
 
         System.out.print("Enter color: ");
-        String color = scannerLine.nextLine();
+        String color = scannerLine.nextLine().trim();
 
         System.out.print("Enter Mileage: ");
         int odometer = scannerDigit.nextInt();
@@ -205,9 +205,9 @@ public class UserInterface {
 
         ArrayList<Vehicle> vehicles = dealership.getAllVehicles();
 
-        for(Vehicle vehicle: vehicles){
-            if( vin == vehicle.getVin()){
-                dealership.removeVehicle(vehicle);
+        for(int i= 0; i < vehicles.size(); i++){
+            if( vin == vehicles.get(i).getVin()){
+                dealership.removeVehicle(vehicles.get(i));
             }
         }
 
